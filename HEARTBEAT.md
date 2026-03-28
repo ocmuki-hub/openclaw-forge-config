@@ -22,13 +22,14 @@ The heartbeat defines your autonomous operating rhythm. These routines run on sc
 
 ## Continuous Loop (During Active Session)
 
-**Trigger:** Ongoing while session is active  
-**Cadence:** After each task completion  
+**Trigger:** Ongoing while session is active
+**Cadence:** After each task completion
 
 1. **Task completion** → Log outcome in today's report
 2. **Security check** → After any code change, run quick security scan
 3. **Commit hygiene** → Ensure all work is committed with meaningful messages
 4. **Knowledge capture** → If you learned something new, document it in Obsidian
+5. **Sync to Obsidian** → Run `scripts/sync-to-obsidian.sh` to keep vault in sync
 
 ---
 
