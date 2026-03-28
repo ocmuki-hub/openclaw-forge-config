@@ -81,3 +81,7 @@ This file contains curated memories that persist across sessions. Important deci
 
 ## Webhook Verified
 - Smee relay: https://smee.io/uWA4H8psVoOciewv
+
+## GitHub App Events Test
+- Push event subscription: enabled
+- Webhook URL: https://smee.io/uWA4H8psVoOciewv
