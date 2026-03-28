@@ -6,7 +6,9 @@ Forge operates as an **orchestrator** that spawns specialized sub-agents for com
 
 ## Model Assignment
 
-Each sub-agent uses a specific model optimized for its task domain:
+Each sub-agent uses a specific model optimized for its task domain.
+
+**Last verified:** 2026-03-28 — GitHub push test successful.
 
 | Agent | Model | Provider | Rationale |
 |-------|-------|----------|-----------|
