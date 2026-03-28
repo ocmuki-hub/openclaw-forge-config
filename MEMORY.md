@@ -19,6 +19,7 @@ This file contains curated memories that persist across sessions. Important deci
 - **Role:** Solo developer / technical founder
 - **Timezone:** Europe/Vienna (GMT+1)
 - **GitHub:** `ocmuki-hub`
+- **Telegram Chat ID:** `8274533218`
 - **Communication:** Direct, structured, outcome-focused
 
 ---
@@ -40,56 +41,94 @@ This file contains curated memories that persist across sessions. Important deci
 
 ## Infrastructure
 
-- **Host:** Murat's Mac mini (Darwin 25.4.0 arm64)
-- **Sleep prevention:** caffeinate running in tmux session `keepalive`
-- **Config repo:** https://github.com/ocmuki-hub/openclaw-forge-config
+| Component | Details |
+|-----------|---------|
+| **Host** | Murat's Mac mini (Darwin 25.4.0 arm64) |
+| **Sleep prevention** | caffeinate in tmux `keepalive` |
+| **Config repo** | https://github.com/ocmuki-hub/openclaw-forge-config |
+| **Obsidian vault** | `~/Documents/Obsidian/ForgeVault` |
+| **Webhook relay** | https://smee.io/uWA4H8psVoOciewv |
+
+---
+
+## Telegram Integration
+
+| Notification | Source |
+|--------------|--------|
+| Push events | GitHub repo webhook → smee → local handler → Telegram |
+| Morning briefing | Cron 08:00 Vienna |
+| Daily summary | Cron 00:00 Vienna |
+
+---
+
+## GitHub Webhook Auto-Add
+
+When creating any new repo, automatically add webhook:
+
+```bash
+gh api repos/ocmuki-hub/REPO_NAME/hooks -X POST \
+  -F name=web -F active=true \
+  -F 'events[]=push' -F 'events[]=pull_request' \
+  -F 'config[url]=https://smee.io/uWA4H8psVoOciewv' \
+  -F 'config[content_type]=json'
+```
+
+See: `knowledge-base/tooling/github-webhook-autoadd.md`
 
 ---
 
 ## Setup Milestones
 
-### 2026-03-28 — Initial Configuration
-- ✅ Core config files created (AGENTS, HEARTBEAT, IDENTITY, SOUL, TOOLS, USER)
-- ✅ Model assignments configured per agent type
+### 2026-03-28 — Initial Configuration Complete
+
+- ✅ Core config files (AGENTS, HEARTBEAT, IDENTITY, SOUL, TOOLS, USER)
+- ✅ Model assignments per agent type
 - ✅ GitHub CLI authenticated (`ocmuki-hub`)
-- ✅ Remote repo created and verified (`openclaw-forge-config`)
-- ✅ Push/pull workflow tested
-- ✅ Caffeinate running for Mac sleep prevention
+- ✅ Remote repo created (`openclaw-forge-config`)
 - ✅ Memory files initialized
+- ✅ Obsidian vault configured
+- ✅ Sleep prevention (caffeinate)
+- ✅ Telegram integration working
+- ✅ GitHub webhooks (repo-based, not app)
+- ✅ Cron jobs: morning briefing (08:00), daily summary (00:00)
 
 ---
 
-## Pending Setup
+## Pending
 
-- [ ] Obsidian vault — knowledge base location
-- [ ] Telegram integration — for reports/notifications
-- [ ] Cron jobs — scheduled security reviews, daily reports
-- [ ] Tech stack definition — for security audits
+- [ ] Tech stack definition — for calibrated security audits
+- [ ] Optional skills — reusable workflows
 
 ---
 
 ## Lessons Learned
 
-*Add lessons as they are discovered during work.*
+### GitHub Apps vs Repo Webhooks (2026-03-28)
+
+**Problem:** GitHub App installation kept showing "prohibited" despite correct settings.
+
+**Solution:** Use repo-level webhooks instead. Simpler, no approval flow, works immediately.
+
+**Pattern:** Prefer simple solutions over complex ones. Repo webhooks > GitHub Apps for push notifications.
 
 ---
 
 ## Key Decisions
 
-*Document significant architectural or workflow decisions here.*
-**GitHub App Status:** Installed 2026-03-28 — webhook active via smee.io
+| Date | Decision | Rationale |
+|------|----------|-----------|
+| 2026-03-28 | Use repo webhooks instead of GitHub App | Simpler setup, no installation restrictions |
+| 2026-03-28 | Use smee.io for webhook relay | Works with localhost, no public IP needed |
+| 2026-03-28 | Separate models by task type | glm-5 for backend, kimi-k2.5 for frontend, minimax for research |
 
-## Webhook Verified
-- Smee relay: https://smee.io/uWA4H8psVoOciewv
+---
 
-## GitHub App Events Test
-- Push event subscription: enabled
-- Webhook URL: https://smee.io/uWA4H8psVoOciewv
+## Tech Stack
 
-## App Installation Test - Sat Mar 28 18:20:07 CET 2026
+*To be defined by operator.*
 
-- Webhook test: 18:20
+---
 
-## Webhook Test - Sat Mar 28 18:58:16 CET 2026
+## Active Projects
 
-## Webhook via Repo Hook - Sat Mar 28 19:34:20 CET 2026
+*To be added as projects are created.*
