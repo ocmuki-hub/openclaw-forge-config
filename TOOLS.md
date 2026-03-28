@@ -78,9 +78,11 @@ Use the right tool for the job. Prefer deterministic tools (scripts, CI, linters
 **Purpose:** Work with Obsidian vault — your persistent knowledge base  
 **This is your primary memory system.** Everything important gets documented here.
 
+**Vault Location:** `~/Documents/Obsidian/ForgeVault`
+
 **Vault Structure:**
 ```
-vault/
+ForgeVault/
 ├── daily-reports/          # Daily summary reports
 │   └── YYYY-MM-DD.md
 ├── decisions/              # Architecture Decision Records (ADRs)
