@@ -78,3 +78,6 @@ This file contains curated memories that persist across sessions. Important deci
 
 *Document significant architectural or workflow decisions here.*
 **GitHub App Status:** Installed 2026-03-28 — webhook active via smee.io
+
+## Webhook Verified
+- Smee relay: https://smee.io/uWA4H8psVoOciewv
