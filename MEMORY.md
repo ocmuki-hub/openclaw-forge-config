@@ -77,3 +77,4 @@ This file contains curated memories that persist across sessions. Important deci
 ## Key Decisions
 
 *Document significant architectural or workflow decisions here.*
+**GitHub App Status:** Installed 2026-03-28 — webhook active via smee.io
